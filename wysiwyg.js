@@ -60,41 +60,84 @@ for (let i = 0; i < peopleList.length; i++) {
 	output.innerHTML += `<div class="person_container" id="[i]">
 						<h2>${peopleList[i].title}: ${peopleList[i].name}</h2>
 						<img class="image" src="${peopleList[i].image}">
-  						<p>${peopleList[i].bio}</p>
+  						<p class="bio">${peopleList[i].bio}</p>
   						<footer>${peopleList[i].lifespan.birth} - ${peopleList[i].lifespan.death}</footer>
   					</div>`;
 
 };
 
-/*var containerEl = document.getElementsByClassName("person_container");
+var containerEl = document.getElementsByClassName("person_container");
+let input = document.getElementById("input-box");
+let bio = document.getElementsByClassName("bio");
 
+/***************** TOGGLE BORDER/FOCUS/BINDING ********************/
 // Event listeners are created
-for (var i = 0; i < containerEl.length; i++) {
-  containerEl[i].addEventListener("click", function (event) {
-  	console.log("event target: ", event.target);
-  	console.log("currentTarget", event.currentTarget)
-
-    //containerEl.classList.toggle("bordered");
-     }
-  )*/};
-/*var counter = 0;
-var outputEl = document.getElementById("container");
-for (; counter < peopleList; counter++) {
-  // Give each person element a unique identifier
-  outputEl.innerHTML += `<div class="person_container" id="person--${counter}"></div>`
-
-}
-
-// Now containerEl will have elements in it
-var containerEl = document.getElementsByClassName("person__container");
-
-// Event listeners are created
-for (var i = 0; i < containerEl.length; i++) {
-  containerEl[i].addEventListener("click", function (event) {
-    // Logic to execute when the element is clicked
-     }
+for (var j = 0; j < containerEl.length; j++) {
+  containerEl[0].addEventListener("click", function (event) {
+  	//console.log("event target: ", event.target);
+  	//console.log("currentTarget", event.currentTarget)
+    containerEl[0].classList.toggle("bordered");
+    //document.getElementById("input-box").focus();
+    input.focus();
+    input.addEventListener("keyup", function(event) {
+      bio[0].innerHTML = event.target.value;
+      })
+    }
   )};
-*/
+
+  for (var k = 0; k < containerEl.length; k++) {
+  containerEl[1].addEventListener("click", function (event) {
+    containerEl[1].classList.toggle("bordered");
+    input.focus();
+    input.addEventListener("keyup", function(event) {
+      bio[1].innerHTML = event.target.value;
+      })
+    }
+  )};
+
+  for (var l = 0; l < containerEl.length; l++) {
+  containerEl[2].addEventListener("click", function (event) {
+    containerEl[2].classList.toggle("bordered");
+    input.focus();
+    input.addEventListener("keyup", function(event) {
+      bio[2].innerHTML = event.target.value;
+      })
+    }
+  )};
+
+  for (var m = 0; m < containerEl.length; m++) {
+  containerEl[3].addEventListener("click", function (event) {
+    containerEl[3].classList.toggle("bordered");
+    input.focus();
+    input.addEventListener("keyup", function(event) {
+      bio[3].innerHTML = event.target.value;
+      })
+    }
+  )};
+
+  for (var n = 0; n < containerEl.length; n++) {
+  containerEl[4].addEventListener("click", function (event) {
+    containerEl[4].classList.toggle("bordered");
+    input.focus();
+    input.addEventListener("keyup", function(event) {
+      bio[4].innerHTML = event.target.value;
+      })
+    }
+  )};
+
+  /************** CLEAR INPUT BOX ******************/
+
+  //let input = document.getElementById("input-box");
+
+input.addEventListener("keyup", clearField);
+  function clearField() {
+    if (event.keyCode === 13) {
+      input.value = "";
+    };
+
+  };
+
+
 
 
 
